@@ -3,6 +3,7 @@ import Formulaire from "../components/formulaire"
 
 export default function Home() {
   const [meal, setMeal] = useState('Petit-déjeuner')
+//   console.log(meal)
   return (
     <>
     <main className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-teal-800">
@@ -23,7 +24,7 @@ export default function Home() {
           </div>
         ))}
       </div>
-    </div>
+    </div >
     <Formulaire meal={meal} />
     </main>
     </>
