@@ -1,20 +1,18 @@
 import { useState } from "react";
+import SelectCountries from "./SelectContries";
 
 export default function Formulaire({ meal }) {
     const [drink, setDrink] = useState('');
     const [entree, setEntree] = useState('');
     const [plat, setPlat] = useState('');
     const [dessert, setDessert] = useState('');
-    const [contry, setContry] = useState('');
     const handlesubmitPetitDejeuner = (e) => {
         e.preventDefault();
         console.log({
             meal,
             drink,
-            contry,
             plat,
         }); 
-        setContry("");
         setDrink("");
         setPlat("");
     };
@@ -23,12 +21,10 @@ export default function Formulaire({ meal }) {
         console.log({
             meal,
             drink,
-            contry,
             entree,
             plat,
             dessert,
         }); 
-        setContry("");
         setDrink("");
         setPlat("");
         setEntree("");
@@ -40,12 +36,10 @@ export default function Formulaire({ meal }) {
         console.log({
             meal,
             drink,
-            contry,
             entree,
             plat,
             dessert,
         }); 
-        setContry("");
         setDrink("");
         setPlat("");
         setEntree("");
@@ -57,19 +51,7 @@ export default function Formulaire({ meal }) {
         <form onSubmit={handlesubmitdiner} className="space-y-4">
             <div>
                 <label htmlFor="ville" className="block text-sm font-medium text-gray-700 mb-1">Ville :</label>
-                <select 
-                    onChange={(e) => setContry(e.target.value)} 
-                    id="ville" 
-                    name="ville"  
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    value={contry}
-                >
-                    <option value="">Choisissez une ville</option>
-                    <option value="paris">Paris</option>
-                    <option value="lyon">Lyon</option>
-                    <option value="marseille">Marseille</option>
-                    <option value="bordeaux">Bordeaux</option>
-                </select>
+                <SelectCountries />
             </div>
 
             <div>
@@ -121,19 +103,7 @@ export default function Formulaire({ meal }) {
         <form onSubmit={handlesubmitDejeuner} className="space-y-4">
             <div>
                 <label htmlFor="ville" className="block text-sm font-medium text-gray-700 mb-1">Ville :</label>
-                <select 
-                    onChange={(e) => setContry(e.target.value)} 
-                    id="ville" 
-                    name="ville"  
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    value={contry}
-                >
-                    <option value="">Choisissez une ville</option>
-                    <option value="paris">Paris</option>
-                    <option value="lyon">Lyon</option>
-                    <option value="marseille">Marseille</option>
-                    <option value="bordeaux">Bordeaux</option>
-                </select>
+                <SelectCountries />
             </div>
 
             <div>
@@ -185,19 +155,7 @@ export default function Formulaire({ meal }) {
         <form onSubmit={handlesubmitPetitDejeuner} className="space-y-4">
             <div>
                 <label htmlFor="ville" className="block text-sm font-medium text-gray-700 mb-1">Ville :</label>
-                <select 
-                    onChange={(e) => setContry(e.target.value)} 
-                    id="ville" 
-                    name="ville"  
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    value={contry}
-                >
-                    <option value="">Choisissez une ville</option>
-                    <option value="paris">Paris</option>
-                    <option value="lyon">Lyon</option>
-                    <option value="marseille">Marseille</option>
-                    <option value="bordeaux">Bordeaux</option>
-                </select>
+                <SelectCountries />
             </div>
 
             <div>
