@@ -6,7 +6,6 @@ export default function Formulaire({ meal }) {
     const [plat, setPlat] = useState('');
     const [dessert, setDessert] = useState('');
     const [contry, setContry] = useState('');
-   
     const handlesubmitPetitDejeuner = (e) => {
         e.preventDefault();
         console.log({
@@ -238,9 +237,9 @@ export default function Formulaire({ meal }) {
             <h1 className="text-2xl font-bold mb-6 text-center text-gray-800">Formulaire de Menu</h1>
             <h2>{meal}</h2>
             {meal === 'Petit-déjeuner' ? handleFormPetitDejeuner() : 
-             meal === 'Déjeuner' ? handleFormDejeune() : 
-             meal === 'Diner' ? handleFormDiner() : 
-             handleFormPetitDejeuner()}
+            meal === 'Déjeuner' ? handleFormDejeune() : 
+            meal === 'Dîner' ? handleFormDiner() : 
+            handleFormPetitDejeuner()}
         </div>
     );
 }
