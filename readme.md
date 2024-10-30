@@ -1,0 +1,1 @@
+front_static_food
