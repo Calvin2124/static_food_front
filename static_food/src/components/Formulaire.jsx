@@ -1,17 +1,26 @@
 import { useState } from "react";
-import SelectCountries from "./SelectContries";
+import SelectCountries from "./SelectCountries";
 
 export default function Formulaire({ meal }) {
     const [drink, setDrink] = useState('');
     const [entree, setEntree] = useState('');
     const [plat, setPlat] = useState('');
     const [dessert, setDessert] = useState('');
+    const [countryId, setCountryId] = useState('');
+
+
+    const getCountryOption = (country) => {
+        setCountryId(country);
+        console.log(country);
+    }
+
     const handlesubmitPetitDejeuner = (e) => {
         e.preventDefault();
         console.log({
             meal,
             drink,
             plat,
+            countryId
         }); 
         setDrink("");
         setPlat("");
@@ -51,7 +60,7 @@ export default function Formulaire({ meal }) {
         <form onSubmit={handlesubmitdiner} className="space-y-4">
             <div>
                 <label htmlFor="ville" className="block text-sm font-medium text-gray-700 mb-1">Ville :</label>
-                <SelectCountries />
+                <SelectCountries getCountryOption={getCountryOption} />
             </div>
 
             <div>
@@ -103,7 +112,7 @@ export default function Formulaire({ meal }) {
         <form onSubmit={handlesubmitDejeuner} className="space-y-4">
             <div>
                 <label htmlFor="ville" className="block text-sm font-medium text-gray-700 mb-1">Ville :</label>
-                <SelectCountries />
+                <SelectCountries getCountryOption={getCountryOption} />
             </div>
 
             <div>
@@ -155,7 +164,7 @@ export default function Formulaire({ meal }) {
         <form onSubmit={handlesubmitPetitDejeuner} className="space-y-4">
             <div>
                 <label htmlFor="ville" className="block text-sm font-medium text-gray-700 mb-1">Ville :</label>
-                <SelectCountries />
+                <SelectCountries getCountryOption={getCountryOption} />
             </div>
 
             <div>
